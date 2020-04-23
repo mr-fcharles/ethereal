@@ -28,6 +28,14 @@ def main():
 		st.markdown("Nel tempo libero amo fare sport, sopratutto correre. Ho anche una passione per la fotografia *(me la cavicchio)* e per la poesia *(sono scarso)*. Ho poi un gruppo di amici intellettuali,"
 					" '*I Ragazzi*', che mi sfotteranno a vita per questo blog. Con loro discuto solo di meccanica quantistica e teoria delle stringhe. **Amo i meme**.")
 
+		st.write("\n")
+
+		st.write("\n")
+
+		st.markdown("*Contact me at:*")
+		st.markdown("*Mail: francis@mrcharles.cool*")
+		st.markdown("*Github: mr-fcharles*")
+		st.markdown("*Instagram: mr.francis.charles*")
 	#########################################################################################
 
 	##################################### HOME PAGE #########################################
@@ -68,6 +76,8 @@ def main():
 
 		image_3 = Image.open('./pics/euforico.jpg')
 		st.image(image_3, use_column_width=True)
+
+		st.markdown("Buona lettura")
 
 
 	######################################### GUARDANDO LE STELLE ################################
