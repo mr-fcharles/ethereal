@@ -52,13 +52,13 @@ def main():
 		st.image(image,use_column_width=True)
 
 		st.subheader("Cosa potresti/non potresti trovare su mrcharles.cool")
-		st.markdown("Questa pagina nasce con l'idea di divulgare in modo *.cool* piccoli articoli divulgativi su Probabilità, Statistica, Machine Learning e Intelligenza Artificiale (rispettivamente ML e AI se sei *swaggy*)")
+		st.markdown("Questa pagina nasce con l'idea di diffondere in modo *.cool* piccoli articoli divulgativi su Probabilità, Statistica, Machine Learning e Intelligenza Artificiale (rispettivamente ML e AI se sei *swaggy*)")
 		st.markdown("\n L'*intensità matematica* degli articoli varierà da post a post, passando da semplici analisi esplorative ai **mega processi stocastici** ai quali l'autore è ormai sentimentalmente legato. "
 					"Se la notazione matematica ti spaventa non disperare, in ogni post troverai riquadri verdi come il seguente:")
 		st.success(" 'ciao sono un riquadro verde' ")
 		st.markdown("dove avrò cura di sintetizzare in lingua corrente i concetti matematici più importanti (*non garantisco di riuscirci ma ci provo*)")
-		st.markdown("Puoi navigare gli articoli disponibili cliccando la freccetta in altro a sinistra e scorrendo le pagine disponibili nel menù a tendina.")
-		st.markdown("Dopo questa breve introduzione per settare i vostri *prior* (abbiate pazienza vi spiegherò tutto, se non siete pazienti google è vostro amico) eccovi un piccolo riassunto delle creature nelle quali ci si può imbattere quà dentro.")
+		st.markdown("Puoi navigare gli articoli presenti cliccando la freccetta in altro a sinistra e scorrendo le pagine disponibili nel menù a tendina.")
+		st.markdown("Dopo questa breve introduzione per settare i vostri *prior* (abbiate pazienza vi spiegherò tutto, se non siete pazienti google è vostro amico) eccovi un piccolo riassunto delle creature nelle quali ci si può imbattere qua dentro.")
 		st.markdown("**Cosa puoi trovare:**")
 		st.markdown("* Dank data visualization;")
 		st.markdown("* Termini inglesi che potevano benissimo essere scritti in italiano (*ma siamo .cool*);")
@@ -95,7 +95,7 @@ def main():
 		st.image(image,use_column_width=True)
 
 		st.markdown(" Dalla democratizzazione di internet (in particolare dall'avvento dei social network) è diventato molto facile imbattersi "
-					" in un **sondaggio** online. Le domande poste agli (spesso annoiati) internauti posono essere le più disparate:")
+					" in un **sondaggio** online. Le domande poste agli (spesso annoiati) internauti possono essere le più disparate:")
 
 		st.markdown("* Quale di questi prodotti saresti disponibile a comprare?")
 		st.markdown("* Cosa ne pensi dell'auttuale governo? ")
@@ -105,14 +105,25 @@ def main():
 		st.markdown("Insomma un sacco di persone sembrano interessate tua opinione. Ad alcuni, in realtà, non frega una beata della tue idee: "
 					" vogliono profilarti, capire le tue abitudini di consumo e venderti il nuovo *olio di palma al cardamomo bio vegan*.")
 
-		st.markdown(" Per ognuno di questi dentiaguzzi esiste poi un numero aleatorio (compreso tra il 3 e il 5) di tesisti, giornalisti e studenti di materie qauntitative allo stato brado "
+		st.markdown(" Per ognuno di questi dentiaguzzi esiste poi un numero aleatorio (compreso tra il 3 e il 5) di tesisti, giornalisti e studenti di materie quantitative allo stato brado "
 					"genuinamente interessati a capire cosa ne pensi del mondo che ti circonda. Spesso l'obiettivo di queste simpatiche creature è raccogliere le opinioni altrui, sintettizzarle calcolando qualche statistica"
-					"e fare qualche grafico per presentare in modo intuitivo ciò che i dati ottenuti evidenziano.")
+					", fare dei grafici per presentare in modo intuitivo ciò che i dati ottenuti evidenziano.")
 
 		st.markdown("Fino a qui tutto bene. Non sono apparse formule, non ho ancora tirato fuori uno *stochastics.*")
 
 		image2 = Image.open('./pics/che_succede.jpg')
 		st.image(image2, use_column_width=True)
+
+		st.subheader("Il ruolo delle ipotesi")
+
+		st.markdown("Recentemente ho avuto il piacere di condurre un piccolo sondaggio su un tema un po' insolito per il mio percorso accademico: l'astrologia (non l'astronomia, quella è un'altra cosa, guarda [qui](https://it.wikipedia.org/wiki/Astronomia)) ")
+
+		st.warning(" (se non hai fatto il sondagio sei un infame, ma puoi diventare meno infame compilandolo adesso [qui]('https://forms.gle/5tteZmUYXwNKCfe59') ")
+
+		st.markdown("Appena la prima cinquantina di responsi sono arrivati mi sono reso conto che, prima di presentare i risultati, avrei dovuto fare quello che ogni statistico un filo navigato fa prima di arrivare a conclusioni che potrebbero rivelarsi errate in futuro: pararsi il deretano con le ipotesi. La maggior parte dei modelli quantitativi (se non tutti) richiedono che alcuni 'requisiti minimi' siano rispettati affinché il passaggio da raccolta dati alle conclusioni sia solido dal punto di vista logico. Possiamo concretizzare questa situauzione nella vita di tutti i giorni con il nostro primo box verde:")
+		st.success("**Ipotesi**: devo andare con una macchina da Mantova a Milano. Una delle ipotesi che deve essere rispettata (chiaramente ce ne sono delle altre) affinché mi sia possibile affrontare il viaggio è che io abbia sufficiente benzina. Possiamo quindi vede le ipotesi come la benzina del nostro motore, ciò che permette alla nostra macchina funzioni a dovere. No ipotesi rispettate, no viaggio.")
+
+		st.markdown("Esiste però un'importante dicotomia dal caso concreto sopra riportato: se non c'è la benzina la macchina non partirà, se le ipotesi non sono rispettate non esiste alcuna legge fisica che mi impedisca al modello di sputare fuori qualche numero lo stesso. Otterremo quindi comunque dei risultati, ma risultati verosimilmente errati e non attendibili. ")
 
 		df,qname_dict = load_stars()
 
