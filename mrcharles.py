@@ -63,7 +63,7 @@ def main():
 		st.markdown("* Dank data visualization;")
 		st.markdown("* Termini inglesi che potevano benissimo essere scritti in italiano (*ma siamo .cool*);")
 		st.markdown("* Concetti matematici che non sei pronto ad accogliere nella tua vita, potrebbe non essere amore a prima vista;")
-		st.markdown("* Un sacco di informazioni per fare lo sgargiante ad aperitivo ed ai pranzi di familgia;")
+		st.markdown("* Un sacco di informazioni per fare lo sgargiante ad aperitivo ed ai pranzi di famiglia;")
 		st.markdown("* **Una marea di meme**")
 
 		image_2 = Image.open('./pics/meme_series.jpg')
