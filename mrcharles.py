@@ -5,7 +5,7 @@ def main():
 
 	from PIL import Image
 
-	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Su di me"])
+	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Bias","Su di me"])
 
 	####################################### BIO #########################################
 	if(page=='Su di me'):
@@ -86,7 +86,55 @@ def main():
 		st.title('Coming soon, really soon')
 
 
+	######################################## BIAS #############################
+	if(page == 'Bias'):
+
+		st.title('Sondaggi, self-selection, confirmation bias, echo chamber')
+
+		image = Image.open('./pics/polls_everywhere.jpg')
+		st.image(image,use_column_width=True)
+
+		st.markdown(" Dalla democratizzazione di internet (in particolare dall'avvento dei social network) è diventato molto facile imbattersi "
+					" in un **sondaggio** online. Le domande poste agli (spesso annoiati) internauti posono essere le più disparate:")
+
+		st.markdown("* Quale di questi prodotti saresti disponibile a comprare?")
+		st.markdown("* Cosa ne pensi dell'auttuale governo? ")
+		st.markdown("* Esiste la vita dopo la morte?")
+		st.markdown("* Qu4LE v3rdURa Ti SENTI di raPPresentaRe oGGI?!1?")
+
+		st.markdown("Insomma un sacco di persone sembrano interessate tua opinione. Ad alcuni, in realtà, non frega una beata della tue idee: "
+					" vogliono profilarti, capire le tue abitudini di consumo e venderti il nuovo *olio di palma al cardamomo bio vegan*.")
+
+		st.markdown(" Per ognuno di questi dentiaguzzi esiste poi un numero aleatorio (compreso tra il 3 e il 5) di tesisti, giornalisti e studenti di materie qauntitative allo stato brado "
+					"genuinamente interessati a capire cosa ne pensi del mondo che ti circonda. Spesso l'obiettivo di queste simpatiche creature è raccogliere le opinioni altrui, sintettizzarle calcolando qualche statistica"
+					"e fare qualche grafico per presentare in modo intuitivo ciò che i dati ottenuti evidenziano.")
+
+		st.markdown("Fino a qui tutto bene. Non sono apparse formule, non ho ancora tirato fuori uno *stochastics.*")
+
+		image2 = Image.open('./pics/che_succede.jpg')
+		st.image(image2, use_column_width=True)
+
+		df,qname_dict = load_stars()
+
+		#st.dataframe(df)
+
+
+@st.cache
+def load_stars():
+
+	import pandas as pd
+	import json
+
+	df =pd.read_csv('data/stars_out.csv',index_col=0)
+	with open('data/qname_dictionary.json', 'r') as fp:
+		qname_dict = json.load(fp)
+
+	return (df,qname_dict)
+
 
 if __name__ == '__main__':
 	main()
+
+
+
 
