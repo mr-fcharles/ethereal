@@ -4,6 +4,7 @@ import streamlit as st
 def main():
 
 	from PIL import Image
+	import numpy as np
 
 	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Bias","Su di me"])
 
@@ -56,7 +57,10 @@ def main():
 		st.markdown("\n L'*intensità matematica* degli articoli varierà da post a post, passando da semplici analisi esplorative ai **mega processi stocastici** ai quali l'autore è ormai sentimentalmente legato. "
 					"Se la notazione matematica ti spaventa non disperare, in ogni post troverai riquadri verdi come il seguente:")
 		st.success(" 'ciao sono un riquadro verde' ")
-		st.markdown("dove avrò cura di sintetizzare in lingua corrente i concetti matematici più importanti (*non garantisco di riuscirci ma ci provo*)")
+		st.markdown("dove avrò cura di sintetizzare in lingua corrente i concetti matematici più importanti (*non garantisco di riuscirci ma ci provo*).")
+		st.markdown("Indicherò invece con un riqaudro rosso le osservazioni più dettagliate, non strettamente necessarie alla comprensione dei concetti presentati, spunti di riflessione per i più curiosi: **nerd notes**.")
+		st.error("'ciao sono un box che contiene roba esoterica'")
+		st.markdown("Spesso questi box contengno concetti che verranno affrontati in un apposito post futuro")
 		st.markdown("Puoi navigare gli articoli presenti cliccando la freccetta in altro a sinistra e scorrendo le pagine disponibili nel menù a tendina.")
 		st.markdown("Dopo questa breve introduzione per settare i vostri *prior* (abbiate pazienza vi spiegherò tutto, se non siete pazienti google è vostro amico) eccovi un piccolo riassunto delle creature nelle quali ci si può imbattere qua dentro.")
 		st.markdown("**Cosa puoi trovare:**")
@@ -78,6 +82,8 @@ def main():
 		st.image(image_3, use_column_width=True)
 
 		st.markdown("Buona lettura")
+
+		st.markdown("*(Ringrazio poi moltissimo Mario Costa. Mario ha avuto la pazienza di seguirmi nella preparazione dell'infrastruttura necessaria alla realizzazione di questo sito, dai DNS alle certificazioni SSL e oltre )*")
 
 
 	######################################### GUARDANDO LE STELLE ################################
@@ -123,7 +129,41 @@ def main():
 		st.markdown("Appena la prima cinquantina di responsi sono arrivati mi sono reso conto che, prima di presentare i risultati, avrei dovuto fare quello che ogni statistico un filo navigato fa prima di arrivare a conclusioni che potrebbero rivelarsi errate in futuro: pararsi il deretano con le ipotesi. La maggior parte dei modelli quantitativi (se non tutti) richiedono che alcuni 'requisiti minimi' siano rispettati affinché il passaggio da raccolta dati alle conclusioni sia solido dal punto di vista logico. Possiamo concretizzare questa situauzione nella vita di tutti i giorni con il nostro primo box verde:")
 		st.success("**Ipotesi**: devo andare con una macchina da Mantova a Milano. Una delle ipotesi che deve essere rispettata (chiaramente ce ne sono delle altre) affinché mi sia possibile affrontare il viaggio è che io abbia sufficiente benzina. Possiamo quindi vede le ipotesi come la benzina del nostro motore, ciò che permette alla nostra macchina funzioni a dovere. No ipotesi rispettate, no viaggio.")
 
-		st.markdown("Esiste però un'importante dicotomia dal caso concreto sopra riportato: se non c'è la benzina la macchina non partirà, se le ipotesi non sono rispettate non esiste alcuna legge fisica che mi impedisca al modello di sputare fuori qualche numero lo stesso. Otterremo quindi comunque dei risultati, ma risultati verosimilmente errati e non attendibili. ")
+		st.markdown("Esiste però un'importante dicotomia dal caso concreto sopra riportato: se non c'è la benzina la macchina non partirà, se le ipotesi non sono rispettate non esiste alcuna legge fisica che impedisca al modello di sputare fuori qualche numero lo stesso. Otterremo quindi comunque dei risultati, ma risultati verosimilmente errati e non attendibili. ")
+
+		st.subheader("Un esempio istruttivo")
+
+		st.markdown("Prima di arrivare al pezzo forte di questo articolo, diventa necessaria una pratica che manderà in bestia il lettore non matematico medio: *ipotizzare una situazione astratta e sconnessa dalla realtà sulla quale ragionare*. Un po' tipo quei problemi delle superiori in cui un tizio compra 200 banane e vuole scambiarle con 1.73 pesci rossi")
+
+		image3 = Image.open('./pics/banana.jpg')
+		st.image(image3, use_column_width=True,caption='il tizio con le banane')
+
+		st.markdown("Per coaudivare la comprensione generale, cercherò di rendere il problema più attuale e concreto di quello sopra citato. Anzi, mi voglio rovinare, la rendero una situazione di *vita o morte*. Considerate il seguente contesto:")
+
+		st.markdown("*Siete fuori a far aperitivo (e già qui siamo sull'astratto spinto data la situazione attuale). Il vostro amico Kevin vi propone la seguente scommessa: si sceglie testa o croce, si lancia la monetina, chi perde offre un Negroni all'altro.*")
+
+		st.markdown("Spero siate d'accordo con me nell'osservare che lo scenario sopra dipinto delinei *nettamente* una situazione di vita o morte. Ora siete disposti a tutto pur di avere quel Negroni gratis.")
+
+		st.markdown("Ci ricordiamo inoltre che Kevin è un fandamentalmente un infame (il classico amico che shoppava su candycrush per dare la merda agli alti). Questa cosa ci fa salire il cospirazionismo all'istante: **Kevin è amico dei poteri forti**, avrà sicuramente una monetina truccata.")
+
+		st.markdown("Decidete quindi di accettare la scommessa ad una sola condizione: la possibilità di verificare che la moneta non sia truccata, detta in modo cool, che sia una *fair coin*. Rimane ora il problema di come verificare che la moneta sia effettivamente *fair*, ci tocca fare qualche conto.")
+
+		st.markdown("L'idea è la seguente: lanciamo la moneta un numero predefinito di volte (che denoteremo con $N_{tot}$) e vediamo quante volte esce testa rispetto al totale dei lanci ($N_{head}$). Possiamo quindi *stimare* la probabilità che lanciando la moneta esca testa come:")
+
+		st.markdown("*Probabilità stimata testa:* $\\hat\\theta = \\frac{N_{head}}{N_{tot}}$")
+
+		st.markdown("Poichè gli *outcome* possibili (gli esiti) della moneta sono due (testa o croce) avremo che tutti i lanci non testa dovranno necessariamente essere stati croce, quindi la stima della probabilità che esca croce sarà ")
+
+		st.markdown("*Probabilità stimata croce:* $1 -\\hat\\theta = 1- \\frac{N_{head}}{N_{tot}}$")
+
+		st.error("**Nerd note**: osserva si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *freqeuntista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
+
+		n_throws = st.slider('Numero lanci',min_value=1,max_value=1000,step=5)
+
+		if st.button('prova'):
+			st.write(np.random.choice([0,1],p=[0.2,0.8],size=n_throws))
+
+
 
 		df,qname_dict = load_stars()
 
