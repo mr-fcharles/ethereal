@@ -158,10 +158,15 @@ def main():
 
 		st.error("**Nerd note**: osserva si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *freqeuntista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
 
-		n_throws = st.slider('Numero lanci',min_value=1,max_value=1000,step=5)
+		prob_head = st.slider('Probabilità testa', min_value=0.01, max_value=1.0, step=0.01)
+		n_throws = st.slider('Numero lanci',min_value=1,max_value=100,step=2)
 
-		if st.button('prova'):
-			st.write(np.random.choice([0,1],p=[0.2,0.8],size=n_throws))
+		if st.button('Lancia le monete!'):
+			lanci = np.random.choice([0,1],p=[prob_head,1-prob_head],size=n_throws)
+			lanci = np.where(lanci==1,'Testa','Croce')
+			st.write(lanci)
+
+
 
 
 
