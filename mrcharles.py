@@ -159,6 +159,16 @@ def main():
 
 		st.error("**Nerd note**: osserva si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *freqeuntista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
 
+
+		st.markdown("Visto che lanciare mille volte una moneta potrebbe risultare una pratica time consuming (anche se indubbiamente affascinante), Francis ha programmato un simulatore di lanci di monetine qui sotto, tutto per te.")
+
+		image4 = Image.open('./pics/future.jpg')
+		st.image(image4,use_column_width=True,caption='quando dici a Kevin che sei in grado di simulare il lancio di 1000 monetine in una frazione di secondo')
+
+		st.markdown("Prima di avviare questa gloriosa simulazione devi impostare due parmetri:")
+		st.markdown("* **Probabilità testa effettiva**: se la moneta di Kevin non fosse truccata la probabilità di testa sarebbe 0.5 (50%). Tutti gli valori favoriscono maggiormente un outcome rispetto all'altro")
+		st.markdown("* **Numero di lanci:** prova a giocare con questo parametro e osserva come varia la stima all'aumentare dei lanci")
+
 		prob_head = st.slider('Probabilità testa', min_value=0.01, max_value=1.0, step=0.01)
 		n_throws = st.slider('Numero lanci',min_value=1,max_value=2500,step=20)
 
@@ -187,7 +197,8 @@ def main():
 			st.write("Stima probabilità testa:",np.round(prob_head_estimate,decimals=2),"	Stima probabilità croce:",np.round(prob_tail_estimate,decimals=2))
 			st.write("Probabilità testa effettiva:",prob_head,"Probabilità croce effettiva",1-prob_head)
 
-			st.markdown("Stima probabilità all'aumento lanci")
+			st.markdown("*Il grafico qui sotto riporta sull'asse orizzontale il numero di monetine lanciate, sull'asse verticale la stima della probabilità corrispondente a quel numero di lanci. Osserva come, all'aumentare del numero"
+						"di moentine lanciate, la stima converge velocemente verso l'effetiva probabilità di testa (rappresentato dalla linea orizzontale)*")
 
 			real_value = np.array([prob_head for i in range(len(running_mean))])
 
