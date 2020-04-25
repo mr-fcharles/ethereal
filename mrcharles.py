@@ -5,6 +5,7 @@ def main():
 
 	from PIL import Image
 	import numpy as np
+	import pandas as pd
 
 	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Bias","Su di me"])
 
@@ -159,13 +160,42 @@ def main():
 		st.error("**Nerd note**: osserva si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *freqeuntista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
 
 		prob_head = st.slider('Probabilità testa', min_value=0.01, max_value=1.0, step=0.01)
-		n_throws = st.slider('Numero lanci',min_value=1,max_value=100,step=2)
+		n_throws = st.slider('Numero lanci',min_value=1,max_value=2500,step=20)
 
 		if st.button('Lancia le monete!'):
-			lanci = np.random.choice([0,1],p=[prob_head,1-prob_head],size=n_throws)
-			lanci = np.where(lanci==1,'Testa','Croce')
+
+			coin_tosses = np.array([])
+			running_mean = np.array([])
+
+			for i in range(n_throws):
+
+				coin_tosses =np.append(coin_tosses,np.random.choice([1,0],p=[prob_head,1-prob_head],size=1))
+				running_mean =np.append(running_mean,np.mean(coin_tosses))
+
+			#lanci = np.random.choice([1,0],p=[prob_head,1-prob_head],size=n_throws)
+
+			n_heads = sum(coin_tosses)
+			n_tails = n_throws - n_heads
+
+			prob_head_estimate = n_heads / n_throws
+			prob_tail_estimate = n_tails / n_throws
+
+			lanci = np.where(coin_tosses==1,'Testa','Croce')
 			st.write(lanci)
 
+			st.write("Numero monete testa:",n_heads, "	Numero monete croce:",n_tails)
+			st.write("Stima probabilità testa:",np.round(prob_head_estimate,decimals=2),"	Stima probabilità croce:",np.round(prob_tail_estimate,decimals=2))
+			st.write("Probabilità testa effettiva:",prob_head,"Probabilità croce effettiva",1-prob_head)
+
+			st.markdown("Stima probabilità all'aumento lanci")
+
+			real_value = np.array([prob_head for i in range(len(running_mean))])
+
+			graph_data = pd.DataFrame(columns=['Stima','Valore effettivo'])
+			graph_data['Stima'] = running_mean
+			graph_data['Valore effetivo'] = real_value
+
+			st.line_chart(graph_data)
 
 
 
