@@ -307,7 +307,7 @@ def main():
 
 		st.markdown("Va beh ma questo cosa centra con i campioni random? Una sproporzione nel genere dei rispondenti come quella vista sopra suggerisce che il processo sia affetto da un fenomeno conosciuto nelle scienze sociali come: **self-selection bias** ")
 
-		st.success("**Self-selection bias:** in parole povere, è più probabile che un individuo interessato di astrologia risponda ad un questionario di astrologia rispeto ad una persona non interessata. Questa è l'essenza del *self-selection bias*, facciamo più volentieri quello che ci piace, meno volentieri quello che non ci piace.")
+		st.success("**Self-selection bias:** in parole povere, è più probabile che un individuo interessato di astrologia risponda ad un questionario di astrologia rispetto ad una persona non interessata. Questa è l'essenza del *self-selection bias*, facciamo più volentieri quello che ci piace, meno volentieri quello che non ci piace.")
 
 		st.error("**Nerd note:** quanto evidenziato sopra, tuttavia non è sufficiente dal punto di vista statistico per concludere che le donne si interessino più di astrologia degli uomini. Ci può dire che, **nel campione raccolto**, le donne sono **correlate** maggiormente alla tematica. "
 				 " Discuteremo in futuro della differenza tra **causalità** e **correlazione**.")
