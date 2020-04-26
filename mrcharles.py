@@ -110,12 +110,12 @@ def main():
 		st.markdown("* Esiste la vita dopo la morte?")
 		st.markdown("* Qu4LE v3rdURa Ti SENTI di raPPresentaRe oGGI?!1?")
 
-		st.markdown("Insomma un sacco di persone sembrano interessate tua opinione. Ad alcuni, in realtà, non frega una beata della tue idee: "
+		st.markdown("Insomma un sacco di persone sembrano interessate alla tua opinione. Ad alcuni, in realtà, non frega una turbomazza della tue idee: "
 					" vogliono profilarti, capire le tue abitudini di consumo e venderti il nuovo *olio di palma al cardamomo bio vegan*.")
 
 		st.markdown(" Per ognuno di questi dentiaguzzi esiste poi un numero aleatorio (compreso tra il 3 e il 5) di tesisti, giornalisti e studenti di materie quantitative allo stato brado "
 					"genuinamente interessati a capire cosa ne pensi del mondo che ti circonda. Spesso l'obiettivo di queste simpatiche creature è raccogliere le opinioni altrui, sintettizzarle calcolando qualche statistica"
-					", fare dei grafici per presentare in modo intuitivo ciò che i dati ottenuti evidenziano.")
+					" e fare dei grafici per presentare in modo intuitivo ciò che i dati ottenuti evidenziano.")
 
 		st.markdown("Fino a qui tutto bene. Non sono apparse formule, non ho ancora tirato fuori uno *stochastics.*")
 
@@ -124,14 +124,14 @@ def main():
 
 		st.subheader("Il ruolo delle ipotesi")
 
-		st.markdown("Recentemente ho avuto il piacere di condurre un piccolo sondaggio su un tema un po' insolito per il mio percorso accademico: l'astrologia (non l'astronomia, quella è un'altra cosa, guarda [qui](https://it.wikipedia.org/wiki/Astronomia)) ")
+		st.markdown("Recentemente ho avuto il piacere di condurre un piccolo sondaggio su un tema un po' insolito per il mio percorso accademico: l'astrologia (non l'astronomia, quella è un'altra cosa, guarda [qui](https://it.wikipedia.org/wiki/Astronomia)). ")
 
 		st.warning(" Se non hai fatto il sondagio sei un infame, ma puoi diventare meno infame compilandolo adesso [qui](https://forms.gle/5tteZmUYXwNKCfe59) ")
 
 		st.markdown("Appena la prima cinquantina di responsi sono arrivati mi sono reso conto che, prima di presentare i risultati, avrei dovuto fare quello che ogni statistico un filo navigato fa prima di arrivare a conclusioni che potrebbero rivelarsi errate in futuro: pararsi il deretano con le ipotesi. La maggior parte dei modelli quantitativi (se non tutti) richiedono che alcuni 'requisiti minimi' siano rispettati affinché il passaggio da raccolta dati alle conclusioni sia solido dal punto di vista logico. Possiamo concretizzare questa situauzione nella vita di tutti i giorni con il nostro primo box verde:")
-		st.success("**Ipotesi**: devo andare con una macchina da Mantova a Milano. Una delle ipotesi che deve essere rispettata (chiaramente ce ne sono delle altre) affinché mi sia possibile affrontare il viaggio è che io abbia sufficiente benzina. Possiamo quindi vede le ipotesi come la benzina del nostro motore, ciò che permette alla nostra macchina funzioni a dovere. No ipotesi rispettate, no viaggio.")
+		st.success("**Ipotesi**: devo andare con una macchina da Mantova a Milano. Una delle ipotesi che deve essere rispettata (chiaramente ce ne sono delle altre) affinché mi sia possibile affrontare il viaggio è che io abbia sufficiente benzina. Possiamo quindi vedere le ipotesi come la benzina del nostro motore, ciò che permette alla nostra macchina funzioni a dovere. No ipotesi rispettate, no viaggio.")
 
-		st.markdown("Esiste però un'importante dicotomia dal caso concreto sopra riportato: se non c'è la benzina la macchina non partirà, se le ipotesi non sono rispettate non esiste alcuna legge fisica che impedisca al modello di sputare fuori qualche numero lo stesso. Otterremo quindi comunque dei risultati, ma risultati verosimilmente errati e non attendibili. ")
+		st.markdown("Esiste però un'importante dicotomia rispetto al caso concreto sopra riportato: se non c'è la benzina la macchina non partirà, se le ipotesi non sono rispettate non esiste alcuna legge fisica che impedisca al modello di sputare fuori qualche numero lo stesso. Otterremo comunque dei risultati, ma risultati verosimilmente errati e non attendibili. ")
 
 		st.subheader("Un esempio istruttivo")
 
@@ -140,15 +140,15 @@ def main():
 		image3 = Image.open('./pics/banana.jpg')
 		st.image(image3, use_column_width=True,caption='il tizio con le banane')
 
-		st.markdown("Per coaudivare la comprensione generale, cercherò di rendere il problema più attuale e concreto di quello sopra citato. Anzi, mi voglio rovinare, la rendero una situazione di *vita o morte*. Considerate il seguente contesto:")
+		st.markdown("Per coaudiuvare la comprensione generale, cercherò di rendere il problema più attuale e concreto di quello sopra citato. Anzi, mi voglio rovinare, la renderò una situazione di *vita o morte*. Considera il seguente contesto:")
 
-		st.markdown("*Siete fuori a far aperitivo (e già qui siamo sull'astratto spinto data la situazione attuale). Il vostro amico Kevin vi propone la seguente scommessa: si sceglie testa o croce, si lancia la monetina, chi perde offre un Negroni all'altro.*")
+		st.markdown("*Sei fuori a far aperitivo (e già qui siamo sull'astratto spinto data la situazione attuale). Il tuo amico Kevin ti propone la seguente scommessa: si sceglie testa o croce, si lancia la monetina, chi perde offre un Negroni all'altro.*")
 
-		st.markdown("Spero siate d'accordo con me nell'osservare che lo scenario sopra dipinto delinei *nettamente* una situazione di vita o morte. Ora siete disposti a tutto pur di avere quel Negroni gratis.")
+		st.markdown("Spero tu sia d'accordo con me nell'osservare che lo scenario sopra dipinto delinei *nettamente* una situazione di vita o morte. Ora sei disposto a tutto pur di avere quel Negroni gratis.")
 
-		st.markdown("Ci ricordiamo inoltre che Kevin è un fandamentalmente un infame (il classico amico che shoppava su candycrush per dare la merda agli alti). Questa cosa ci fa salire il cospirazionismo all'istante: **Kevin è amico dei poteri forti**, avrà sicuramente una monetina truccata.")
+		st.markdown("Ci ricordiamo inoltre che Kevin è fandamentalmente un infame (il classico amico che shoppava su candycrush per dare la merda agli alti). Questa cosa ci fa salire il cospirazionismo all'istante: **Kevin è amico dei poteri forti**, avrà sicuramente una monetina truccata.")
 
-		st.markdown("Decidete quindi di accettare la scommessa ad una sola condizione: la possibilità di verificare che la moneta non sia truccata, detta in modo cool, che sia una *fair coin*. Rimane ora il problema di come verificare che la moneta sia effettivamente *fair*, ci tocca fare qualche conto.")
+		st.markdown("Decidi quindi di accettare la scommessa ad una sola condizione: la possibilità di verificare che la moneta non sia truccata, detta in modo cool, che sia una *fair coin*. Rimane ora il problema di come verificare che la moneta sia effettivamente *fair*, ci tocca fare qualche conto.")
 
 		st.markdown("L'idea è la seguente: lanciamo la moneta un numero predefinito di volte (che denoteremo con $N_{tot}$) e vediamo quante volte esce testa rispetto al totale dei lanci ($N_{head}$). Possiamo quindi *stimare* la probabilità che lanciando la moneta esca testa come:")
 
@@ -158,7 +158,7 @@ def main():
 
 		st.markdown("*Probabilità stimata croce:* $1 -\\hat\\theta = 1- \\frac{N_{head}}{N_{tot}}$")
 
-		st.error("**Nerd note**: osserva si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *freqeuntista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
+		st.error("**Nerd note**: osserva come si stia parlando di una *stima della probabilità* e non di probabilità. Facendo tendere $N_{tot}$ verso l'infinito otteniamo la definizione *frequentista* di probabilità $P(testa)=\\lim_{N_{tot} \\rightarrow \\infty} \\frac{N_{head}}{N_{tot}}$. Esistono diverse interpretazioni di probabilità e torneremo su questo tema in futuro.")
 
 
 		st.markdown("Visto che lanciare mille volte una moneta potrebbe risultare una pratica time consuming (anche se indubbiamente affascinante), Francis ha programmato un simulatore di lanci di monetine qui sotto, tutto per te.")
@@ -168,14 +168,14 @@ def main():
 
 		st.markdown("Il simulatore è basato su un'importantissima **ipotesi**: tutti i lanci delle monetine sono **indipendenti ed identicamente distributiti** (per gli amici, sono **i.i.d.**)")
 
-		st.success("**Indipendenti ed identicamente distribuiti:** quando affermiamo che due lanci di moneta siano *indipendenti* stiamo assumendo che se il lancio 1 è risultato *testa*, questo non ci dà alcuna informazione sull'outcome dei lanci successivi: sapere che la moneta 1 è risultata testa, se la nostra ipotesi è verificata, non aumenta la probabilità che la seconda moneta risulti nuovamente testa. Ogni lancio della monetina è a se stante, indipendente appunto."
+		st.success("**Indipendenti ed identicamente distribuiti:** quando affermiamo che due lanci di moneta siano *indipendenti* stiamo assumendo che se il lancio 1 è risultato *testa*, questo non ci dà alcuna informazione sull'outcome dei lanci successivi: sapere che la moneta 1 è risultata testa, se la nostra ipotesi è verificata, non aumenta la probabilità che la seconda moneta risulti nuovamente testa. Ogni lancio della monetina è a sé stante, indipendente appunto."
 				   "Quando invece assumiamo che i lanci siano *identicamente distribuiti* stiamo affermando che la probabilità che ogni moneta risulti testa sia la stessa per ogni lancio.")
 
 		st.error("**Nerd note**: osserva come *indipendenti* ed *identicamente distribuiti* non siano la stessa cosa: potremmo avere un numero $N$ di lanci di moneta indipendenti ma con ognuno una probabilità diversa di risultar testa (quindi non identicamente distribuiti)")
 
 		st.markdown("Prima di avviare questa gloriosa simulazione devi impostare due parmetri:")
 		st.markdown("* **Probabilità testa effettiva**: se la moneta di Kevin non fosse truccata la probabilità di testa sarebbe 0.5 (50%). Tutti gli altri valori modellano monete che favoriscono maggiormente un lato rispetto all'altro;")
-		st.markdown("* **Numero di lanci:** prova a giocare con questo parametro e osserva come varia la stima all'aumentare dei lanci;")
+		st.markdown("* **Numero di lanci:** prova a giocare con questo parametro e osserva come varia la stima all'aumentare dei lanci.")
 
 		st.markdown("Daje, tenendo ben a mente queste importanti ipotesi, possiamo impostare i valori e lanciare le monete")
 
@@ -233,36 +233,36 @@ def main():
 
 		st.markdown("Siamo ancora interessati a sapere quale sia la la probabilità che una moneta risulti testa. Considerando ora che $N$ potrebbe essere un numero troppo grande anche per il nostro simulatore, dobbiamo scegliere una delle seguenti alternative:")
 
-		st.markdown("* *ce ne sbattiamo altamente* e lanciamo tutte le $N$, dedicando la nostra vita alla scienza: qualcuno dovrà pur lanciare ste monete;")
-		st.markdown("* ci inventiamo qualcosa di *smart* usando la statistica;")
+		st.markdown("* *ce ne sbattiamo altamente* e lanciamo tutte le $N$ monete, dedicando la nostra vita alla scienza: qualcuno dovrà pur lanciare ste monete;")
+		st.markdown("* ci inventiamo qualcosa di *smart* usando la statistica.")
 
 		st.markdown("Potremmo per esempio adottare una procedura di **simple random sampling** (campionamento casuale semplice):")
 		st.markdown("")
 
-		st.success("**Simple random sampling**: estraiamo un campione di $n$ monete dall'insieme totale delle $N$ monete disponibili. Ognuni moneta ha la stessa probabilità di finire nel nostro *campione* e viene scelta in modo completamente casuale. Come nell'esmpio precedente (grafico che converge alla linea orizzontale), per un $n$ sufficientemente grande la proporzione di testa e croce tra le $n$ monete sarà più o meno la stessa di quella tra le $N$ monete. Ci evitiamo quindi di doverle lanciare tutte le $N$ monete.")
+		st.success("**Simple random sampling**: estraiamo un campione di $n$ monete dall'insieme totale delle $N$ monete disponibili. Ogni moneta ha la stessa probabilità di finire nel nostro *campione* e viene *scelta in modo completamente casuale*. Come nell'esempio precedente (grafico che converge alla linea orizzontale), per un $n$ sufficientemente grande la proporzione di testa e croce tra le $n$ monete sarà più o meno la stessa di quella tra le $N$ monete. Ci evitiamo quindi di doverle lanciare tutte le $N$ monete.")
 
 		st.markdown("Nel processo sopra descritto **due** sono i punti chiave:")
 		st.markdown("* Il fatto che *a priori* ogni moneta abbia la stessa probabilità di finire nel campione;")
-		st.markdown("* Il fatto che *a posteriori* ogni moneta nel campione sia stata scelta casualmente;")
+		st.markdown("* Il fatto che *a posteriori* ogni moneta nel campione sia stata scelta casualmente.")
 
 
-		st.markdown("Nota come questi due aspetti siano appunto **ipotesi**: *se* queste ipotesi sono rispettate, *allora* le grandezze calcolate sul campione di $n$ monetine rispecchiano quelle della popolazione $N$")
+		st.markdown("Nota come questi due aspetti siano appunto **ipotesi**: *se* queste ipotesi sono rispettate, *allora* le grandezze calcolate sul campione di $n$ monetine rispecchiano quelle della popolazione $N$.")
 
-		st.error("**Nerd notes:** Per i più attenti, la proposizione logica *<<se ..., allora ...>>* denota ciò che in matematica è chiamato **teorema**")
+		st.error("**Nerd notes:** Per i più attenti, la proposizione logica *<<se ..., allora ...>>* denota ciò che in matematica è chiamato **teorema**.")
 
-		st.markdown("Nel nostro esempio delle monete, l'ipotesi iniziale che le monete siano i.i.d. fa si che queste due ulteriori ipotesi siano sempre soddisfatte: non importa come le scegliamo o chi finisca nel campione, poichè sono tutte identiche. Notiamo inoltre come un'ipotesi iniziale faccia si che altre ipotesi siano verificate.")
+		st.markdown("Nel nostro esempio, l'ipotesi iniziale che le monete siano i.i.d. fa sì che queste due ulteriori ipotesi siano automaticamente soddisfatte: non importa come le scegliamo o chi finisca nel campione, poichè sono tutte identiche. Notiamo quindi come l'ipotesi iniziale implichi direttamente la validità queste ultime ipotesi.")
 
 		image6 = Image.open('./pics/inception.jpg')
 		st.image(image6,use_column_width=True)
 
-		st.subheader("SI MA QUINDI IL SONDAGGIO?!!?")
+		st.subheader("SI', MA QUINDI IL SONDAGGIO?!!?")
 
-		st.markdown("Ok ci siamo, i sondaggi! Ora che abbiamo introdotto tutta questa struttura teorica siamo pronti ad affrontare come si deve il problema iniziale.")
-		st.markdown("Pensiamo ad una domanda a scelta multipla di un sondaggio, cosa la rende diversa dalla moneta? Beh in realtà poco! Invece che avere due outcome possibili (*testa,croce*) abbiamo un numero $k$ di risposte possibili e siamo interessati a capire quale sia la probabilità che, prendendo una persona per strada, questa ci risponda con una delle alternative possibili.")
+		st.markdown("Ok ci siamo, il sondaggio! Ora che abbiamo introdotto tutta questa struttura teorica siamo pronti ad affrontare come si deve il problema iniziale.")
+		st.markdown("Pensiamo ad una domanda a scelta multipla di un form, cosa la rende diversa dal caso della moneta? Beh in realtà poco! Invece di avere due outcome possibili (*testa,croce*), abbiamo un numero $k$ di risposte possibili e siamo interessati a capire quale sia la probabilità che, prendendo una persona per strada, questa ci risponda con una delle alternative.")
 
-		st.markdown("Un primo problema risulta evidente: **non possiamo lanciare in aria persone i.i.d.**, per quando la cosa sarebbe divertente, probabibilmente non contribuirebbe al nostro scopo finale.")
+		st.markdown("Un primo problema risulta evidente: **non possiamo lanciare in aria persone i.i.d.**, per quanto la cosa sarebbe divertente, probabilmente non contribuirebbe al nostro scopo finale. Non possiamo quindi seguire l'approccio adottato con le monete.")
 
-		st.markdown("La prima ipotesi non è quindi rispettata e, come abbiamo imparato all'inizio dell'articolo, no ipotesi no conclusioni. Non ci resta quindi che provare a raccogliere un simple random sample di opinioni con un form condiviso su internet.")
+		st.markdown("Non possiamo quindi impostare un esperimento in cui la prima ipotesi implichi le altre due e, come abbiamo imparato all'inizio dell'articolo, no ipotesi no conclusioni. Non ci resta quindi che provare a raccogliere un simple random sample di opinioni con un form condiviso su internet, sperando che il campione soddisfi i requisiti elencati.")
 
 		image7 = Image.open('./pics/wrong.jpg')
 		st.image(image7,use_column_width=True)
@@ -294,18 +294,18 @@ def main():
 
 		st.markdown("**68.1% dei rispondenti sono donne**, wow. Guardando questi numeri si delineano due scenari alternativi:")
 
-		st.markdown("* La storia di mendel, delle X e delle Y, dei piselli odorosi *era una cagata pazzesca*, nella società ci sono più donne che uomini;")
-		st.markdown("* Il campione che ho raccolto non è un *random sample*;")
+		st.markdown("* La storia di Mendel, delle X e delle Y, dei piselli odorosi *era una cagata pazzesca*, nella società ci sono più donne che uomini;")
+		st.markdown("* Il campione che ho raccolto non è un *random sample*.")
 
-		st.markdown("Se è difficile sentire dire da uno statistico 'sono sicuro' rispetto a qualsiasi cosa', è piuttosto verosimile che il nostro campione non sia *random sample*. Individueremo ora due (dei tanti) motivi per il qaule un campione raccolto con questa modalità non rappresenti un *random sample*."
-					" Forse sarete sorpresi (forse no), ma questi motivi hanno poco a che fare con la matematica, anzi sono piuttosto *umani*.")
+		st.markdown("Se è difficile sentire dire da uno statistico 'sono sicuro' rispetto ad una proposizione qualsiasi', è piuttosto verosimile che il nostro campione non sia *random sample*. Individueremo ora due (dei tanti) motivi per i quali un campione raccolto con questa modalità non rappresenti un *random sample*."
+					" Forse sarai sorpreso (forse no), ma questi motivi hanno poco a che fare con la matematica, anzi sono piuttosto *umani*.")
 
 		st.subheader("Self-selection")
 
 		st.markdown("In tanti amici mi hanno chiesto come mai mi fosse venuto in mente di effettuare questo sondaggio *(so veramente poco di astrologia)*. Durante quarantena lo sport nazionale è diventato sentirsi su whatsapp e sui social per farsi compagnia (ho una vita sociale molto più attiva di prima in fin dei conti)."
-					" Dopo un mese di smalltalk e chat con amici mi sono reso conto di come l'orscopo fosse un *tema ricorrente tra le controparti femminili* mentre non venisse mai sfiorato dai maschietti *(qualcuno direbbe: perchè i maschietti sono monotematici)*. E' proprio da questa osservazione che è nata l'idea di realizzare il questionario.")
+					" Dopo un mese di smalltalk e chat con amici mi sono reso conto di come l'oroscopo (ma più in generale l'astrologia) fosse un *tema ricorrente tra le controparti femminili* mentre non venisse mai sfiorato dai maschietti *(qualcuno direbbe: perchè i maschietti sono monotematici)*. E' proprio da questa osservazione che è nata l'idea di realizzare il questionario.")
 
-		st.markdown("Va beh ma questo cosa centra con i campioni random? Uno sbilinciamento di genere come quello visto sopra suggerisce che il processo sia affetto da un fenomeno conosciuto nelle scienze sociali come: **self-selection bias** ")
+		st.markdown("Va beh ma questo cosa centra con i campioni random? Una sproporzione nel genere dei rispondenti come quella vista sopra suggerisce che il processo sia affetto da un fenomeno conosciuto nelle scienze sociali come: **self-selection bias** ")
 
 		st.success("**Self-selection bias:** in parole povere, è più probabile che un individuo interessato di astrologia risponda ad un questionario di astrologia rispeto ad una persona non interessata. Questa è l'essenza del *self-selection bias*, facciamo più volentieri quello che ci piace, meno volentieri quello che non ci piace.")
 
@@ -316,28 +316,28 @@ def main():
 
 		st.markdown("*'A priori ogni persona (prima moneta) deve avere la stessa probabilità di finire nel campione'*")
 
-		st.markdown("E' immediato vedere come il *self-selection bias*, faccia saltare questa prima ipotesi: gli individui interessati sono rappresentati con probabilità maggiore all'interno del campione. La prossima volta che vedi un sondaggio"
+		st.markdown("E' immediato vedere come il *self-selection bias*, faccia saltare questa prima ipotesi: gli individui interessati di astrologia sono rappresentati con probabilità maggiore all'interno del campione. La prossima volta che vedi un sondaggio"
 					" e pensi *'che cazzata,non mi interessa, non lo farò mai'*, sappi che stai distorcendo una ricerca sociale. **Sei un infame come Kevin, sei un maledetto.**")
 
 		image8 = Image.open('./pics/maledetti.jpg')
 		st.image(image8,use_column_width=True)
 
-		st.markdown("Gli effetti del self-selection bias vanno ben oltre la distorsione dei sondaggi e lo scoglionamento di chi calcola statistiche, il self-selection bias è ovunque esistano processi di scelta sociale. Questo tipo di bias è spesso alla base dei meccanismi (talvolta involontari)"
+		st.markdown("Gli effetti del self-selection bias vanno ben oltre la distorsione dei sondaggi e la violenza psicologica su chi calcola statistiche, il self-selection bias è ovunque esistano processi di scelta sociale. Questo tipo di bias è spesso alla base dei meccanismi (talvolta involontari)"
 					" di discriminazione e segregazione sociale. Ci torneremo su.")
 
 
 		st.subheader('Omofilia')
 
-		st.markdown("Esiste poi un altro meccanismo, simile alla self-selection, in grado di rovinare un'analisi come quella impostata per l'astro-questionario: **l'omofilia**")
+		st.markdown("Esiste poi un altro meccanismo, simile alla self-selection, in grado di rovinare un'analisi come quella impostata per l'astro-questionario: **l'omofilia**.")
 
-		st.success("**Omofilia:** l'omofilia è il fenomeno (molto noto nella ricerca sociale) secondo il quale *i coglioni vanno in coppia*. In modo più educato, tendenzialmente, i nostri amici ci assomigliano e condividono con noi molti interessi.")
+		st.success("**Omofilia:** usando un francesismo, l'omofilia è il fenomeno (molto noto nella ricerca sociale) secondo il quale *i coglioni vanno in coppia*. In modo più educato, tendenzialmente, i nostri amici ci assomigliano e condividono con noi molti interessi.")
 
-		st.markdown("Perchè questo è un problema per il questionario? Perchè compileremo il questionario e, per fare contento francis, lo inoltreremo a quei due amici stronzi che sentiamo ogni 30 secondi della nostra vita e a cui siamo attacati con il cordone ombelicale."
-					" Ricordate la seconda assunzione del campione aleatorio?")
+		st.markdown("Perchè questo è un problema per il questionario? Perchè compileremo il questionario e, per fare contento Francis, lo inoltreremo a quei due amici che sentiamo ogni 30 secondi della nostra vita e a cui siamo attacati con il cordone ombelicale."
+					" Ricordi la seconda assunzione del campione aleatorio?")
 
 		st.markdown("*A posteriori ogni persona (prima moneta) nel campione sia stata scelta casualmente*")
 
-		st.markdown("A questo punto, unendo omofilia e self-selection bias abbiamo che alcuni individui risponderanno al questionario con alta probabilità rispetto ad altri *(self-selection)*. Questi individui inoltreranno poi il questionario ad altre persone a loro tendenzialmente simili secondo il principio di omomofilia)"
+		st.markdown("A questo punto, unendo omofilia e self-selection bias abbiamo che alcuni individui risponderanno al questionario con alta probabilità rispetto ad altri *(self-selection)*. Questi individui inoltreranno poi il questionario ad altre persone a loro tendenzialmente simili secondo il principio di omomofilia, invalidando l'ipotesi che ogni persona nel campione sia stata scelta in modo casuale"
 					". **Et voilà, campione distorto**.")
 
 		image9 = Image.open('./pics/likeme.jpg')
@@ -347,19 +347,22 @@ def main():
 
 		st.subheader('Conclusioni')
 
-		st.markdown("Un elefante gira ora nella stanza: se sapevi tutta sta merda, perchè fare il questionario?")
+		st.markdown("Un elefante gira ora nella stanza: se sapevi di tutte queste disgrazie, perchè fare il questionario?")
 
-		st.markdown("**Motivo 1:** sono in quarantena come voi, *anche io mi rompo il cazzo*. Per una strana perversione personale amo analizzare dati, volevo quindi provare l'esperienza folle di raccogliere dati personalmente per una volta.")
+		st.markdown("**Motivo 1:** sono in quarantena come voi, *anche io sono annoiato*. Per una strana perversione personale amo analizzare dati, volevo quindi provare l'esperienza folle di raccogliere dati personalmente per una volta.")
+
+		image10 = Image.open('./pics/regret.jpg')
+		st.image(image10, use_column_width=True)
 
 		st.markdown("**Motivo 2:** i dati raccolti non sono da buttare via, semplicemente non possono essere usati per trarre conclusioni sull'universo conosciuto, non possono essere usati per **far inferenza sulla popolazione**. Probabilmente sono buoni dati per descrivere **cosa ne pensano i miei amici (e gli amici degli amici)** dell'astrologia.")
 
-		st.markdown("**Motivo 3:** spero di avervi convito di come sia possibile arrivare a conclusioni sbagliate se non si rispetto **le cazzo di ipotesi dei modelli**. Questo per dire che, tutte le volte che in televisione sentite un giornalista dire *<<le previsioni erano errate>>*, rispetto ad un qualsiasi argomento, "
+		st.markdown("**Motivo 3:** spero di averti convito di come sia possibile arrivare a conclusioni sbagliate se non si rispetto **le cazzo di ipotesi dei modelli**. Questo per dire che, tutte le volte che in televisione senti un giornalista dire *<<le previsioni erano errate>>*, rispetto ad un qualsiasi argomento, "
 					"99% delle volte non si è trattato di un errore computazionale, non hanno sbagliato i conti, erano le ipotesi del modello predittivo a essere errate.")
 
-		st.markdown("**Motivo 4:** gli effetti di self-selection e omofilia condizionano fortemente il modo in cui percepiamo il mondo che ci circonda. Spero abbiate intuito che pure facendo un sondaggio online sia facile, soprattuto se non si è oggettivi nella formulazione delle domande, confermare le idee con le quali si è partiti e non sondare in maniera rigorosa le opinioni altrui."
-					" L'opinione di chi ci è *socialmente vicino* probabilmente assomiglia alla nostra, **non giudicate il mondo guardando solo il vostro prato di casa**. ")
+		st.markdown("**Motivo 4:** gli effetti di self-selection e omofilia condizionano fortemente il modo in cui percepiamo il mondo che ci circonda. Spero tu abbia intuito che pure facendo un sondaggio online sia facile, soprattuto se non si è oggettivi nella formulazione delle domande, confermare le idee con le quali si è partiti e non sondare in maniera rigorosa le opinioni altrui."
+					" L'opinione di chi ci è *socialmente vicino* probabilmente somiglia alla nostra, **non giudicare il mondo guardando solo il tuo prato di casa**, pure se abiti in campagna e il tuo giardino ti sembra grande. ")
 
-		st.markdown("Concludo ringraziando chi di voi ha avuto la pazienza di arrivare fino in fondo a questo articolo. E' la prima volta che scrivo così tanto e spero possa essere utile per qualcuno di voi. Per eventuali feedback, osservazioni o richieste di approfondimento scrivetemi su *francis@mrcharles.cool*. **La messa è finita, andate in pace.**")
+		st.markdown("Concludo ringraziandoti di aver ha avuto la pazienza di arrivare fino in fondo a questo articolo. E' la prima volta che scrivo così tanto e spero possa esserti utile questa mia riflessione. Per eventuali feedback, osservazioni o richieste di approfondimento scrivetemi su *francis@mrcharles.cool*. **La messa è finita, andate in pace.**")
 
 @st.cache
 def load_stars():
