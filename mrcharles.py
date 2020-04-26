@@ -6,6 +6,7 @@ def main():
 	from PIL import Image
 	import numpy as np
 	import pandas as pd
+	import matplotlib.pyplot as plt
 
 	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Bias","Su di me"])
 
@@ -96,7 +97,7 @@ def main():
 	######################################## BIAS #############################
 	if(page == 'Bias'):
 
-		st.title('Sondaggi, self-selection, confirmation bias, echo chamber')
+		st.title("L'importanza delle ipotesi: sampling, self-selection e omofilia")
 
 		image = Image.open('./pics/polls_everywhere.jpg')
 		st.image(image,use_column_width=True)
@@ -261,13 +262,104 @@ def main():
 
 		st.markdown("Un primo problema risulta evidente: **non possiamo lanciare in aria persone i.i.d.**, per quando la cosa sarebbe divertente, probabibilmente non contribuirebbe al nostro scopo finale.")
 
-		st.markdown("La prima ipotesi non è quindi rispettata e, come abbiamo imparato all'inizio dell'articolo, no ipotesi no conclusioni. Non ci resta quindi che provare a raccogliere un simple random sample di opinioni con un form. Cosa potrebbe andare storto?")
+		st.markdown("La prima ipotesi non è quindi rispettata e, come abbiamo imparato all'inizio dell'articolo, no ipotesi no conclusioni. Non ci resta quindi che provare a raccogliere un simple random sample di opinioni con un form condiviso su internet.")
+
+		image7 = Image.open('./pics/wrong.jpg')
+		st.image(image7,use_column_width=True)
+
+		st.subheader("Guardiamo i dati")
+
+		st.markdown("Quando in precedenza abbiamo parlato *simple random sample* abbiamo detto che tale campione è rappresentativo dell'intera popolazione e che quindi statistiche calcolate sul campione ci permettono di stimare le quantità di interesse nella popolazione, poichè rispecchiano le stesse proporzioni *(a patto che le ipotesi siano verificate)*. Vediamo una statistica interessante del campione raccolto con l'astro-questionario: **il genere dei rispondenti**")
+
+		df, qname_dict = load_stars()
 
 
-		df,qname_dict = load_stars()
+		labels = df['q_22'].value_counts().index
+		sizes = df['q_22'].value_counts().values
 
-		#st.dataframe(df)
+		# colors
+		colors = ['#ff9999', '#66b3ff', '#99ff99']
 
+		fig1, ax1 = plt.subplots()
+		ax1.pie(sizes, colors=colors, labels=labels, autopct='%1.1f%%', startangle=90)
+		# draw circle
+		centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+		fig = plt.gcf()
+		fig.gca().add_artist(centre_circle)
+		# Equal aspect ratio ensures that pie is drawn as a circle
+		ax1.axis('equal')
+		plt.tight_layout()
+
+		st.pyplot()
+
+		st.markdown("**68.1% dei rispondenti sono donne**, wow. Guardando questi numeri si delineano due scenari alternativi:")
+
+		st.markdown("* La storia di mendel, delle X e delle Y, dei piselli odorosi *era una cagata pazzesca*, nella società ci sono più donne che uomini;")
+		st.markdown("* Il campione che ho raccolto non è un *random sample*;")
+
+		st.markdown("Se è difficile sentire dire da uno statistico 'sono sicuro' rispetto a qualsiasi cosa', è piuttosto verosimile che il nostro campione non sia *random sample*. Individueremo ora due (dei tanti) motivi per il qaule un campione raccolto con questa modalità non rappresenti un *random sample*."
+					" Forse sarete sorpresi (forse no), ma questi motivi hanno poco a che fare con la matematica, anzi sono piuttosto *umani*.")
+
+		st.subheader("Self-selection")
+
+		st.markdown("In tanti amici mi hanno chiesto come mai mi fosse venuto in mente di effettuare questo sondaggio *(so veramente poco di astrologia)*. Durante quarantena lo sport nazionale è diventato sentirsi su whatsapp e sui social per farsi compagnia (ho una vita sociale molto più attiva di prima in fin dei conti)."
+					" Dopo un mese di smalltalk e chat con amici mi sono reso conto di come l'orscopo fosse un *tema ricorrente tra le controparti femminili* mentre non venisse mai sfiorato dai maschietti *(qualcuno direbbe: perchè i maschietti sono monotematici)*. E' proprio da questa osservazione che è nata l'idea di realizzare il questionario.")
+
+		st.markdown("Va beh ma questo cosa centra con i campioni random? Uno sbilinciamento di genere come quello visto sopra suggerisce che il processo sia affetto da un fenomeno conosciuto nelle scienze sociali come: **self-selection bias** ")
+
+		st.success("**Self-selection bias:** in parole povere, è più probabile che un individuo interessato di astrologia risponda ad un questionario di astrologia rispeto ad una persona non interessata. Questa è l'essenza del *self-selection bias*, facciamo più volentieri quello che ci piace, meno volentieri quello che non ci piace.")
+
+		st.error("**Nerd note:** quanto evidenziato sopra, tuttavia non è sufficiente dal punto di vista statistico per concludere che le donne si interessino più di astrologia degli uomini. Ci può dire che, **nel campione raccolto**, le donne sono **correlate** maggiormente alla tematica. "
+				 " Discuteremo in futuro della differenza tra **causalità** e **correlazione**.")
+
+		st.markdown("Ti ricordi la prima condizione necessaria affinchè il campione fosse un random sample?")
+
+		st.markdown("*'A priori ogni persona (prima moneta) deve avere la stessa probabilità di finire nel campione'*")
+
+		st.markdown("E' immediato vedere come il *self-selection bias*, faccia saltare questa prima ipotesi: gli individui interessati sono rappresentati con probabilità maggiore all'interno del campione. La prossima volta che vedi un sondaggio"
+					" e pensi *'che cazzata,non mi interessa, non lo farò mai'*, sappi che stai distorcendo una ricerca sociale. **Sei un infame come Kevin, sei un maledetto.**")
+
+		image8 = Image.open('./pics/maledetti.jpg')
+		st.image(image8,use_column_width=True)
+
+		st.markdown("Gli effetti del self-selection bias vanno ben oltre la distorsione dei sondaggi e lo scoglionamento di chi calcola statistiche, il self-selection bias è ovunque esistano processi di scelta sociale. Questo tipo di bias è spesso alla base dei meccanismi (talvolta involontari)"
+					" di discriminazione e segregazione sociale. Ci torneremo su.")
+
+
+		st.subheader('Omofilia')
+
+		st.markdown("Esiste poi un altro meccanismo, simile alla self-selection, in grado di rovinare un'analisi come quella impostata per l'astro-questionario: **l'omofilia**")
+
+		st.success("**Omofilia:** l'omofilia è il fenomeno (molto noto nella ricerca sociale) secondo il quale *i coglioni vanno in coppia*. In modo più educato, tendenzialmente, i nostri amici ci assomigliano e condividono con noi molti interessi.")
+
+		st.markdown("Perchè questo è un problema per il questionario? Perchè compileremo il questionario e, per fare contento francis, lo inoltreremo a quei due amici stronzi che sentiamo ogni 30 secondi della nostra vita e a cui siamo attacati con il cordone ombelicale."
+					" Ricordate la seconda assunzione del campione aleatorio?")
+
+		st.markdown("*A posteriori ogni persona (prima moneta) nel campione sia stata scelta casualmente*")
+
+		st.markdown("A questo punto, unendo omofilia e self-selection bias abbiamo che alcuni individui risponderanno al questionario con alta probabilità rispetto ad altri *(self-selection)*. Questi individui inoltreranno poi il questionario ad altre persone a loro tendenzialmente simili secondo il principio di omomofilia)"
+					". **Et voilà, campione distorto**.")
+
+		image9 = Image.open('./pics/likeme.jpg')
+		st.image(image9,use_column_width=True)
+
+		st.error("**Nerd note:** osserva la direzione dei due effetti: se la *self-selection* porta persone simili a selezionarsi autonomamente in gruppi omogenei, *l'omofilia* porta gruppi omogenei a far scelte simili. I due effetti si rafforzano l'un l'altro.")
+
+		st.subheader('Conclusioni')
+
+		st.markdown("Un elefante gira ora nella stanza: se sapevi tutta sta merda, perchè fare il questionario?")
+
+		st.markdown("**Motivo 1:** sono in quarantena come voi, *anche io mi rompo il cazzo*. Per una strana perversione personale amo analizzare dati, volevo quindi provare l'esperienza folle di raccogliere dati personalmente per una volta.")
+
+		st.markdown("**Motivo 2:** i dati raccolti non sono da buttare via, semplicemente non possono essere usati per trarre conclusioni sull'universo conosciuto, non possono essere usati per **far inferenza sulla popolazione**. Probabilmente sono buoni dati per descrivere **cosa ne pensano i miei amici (e gli amici degli amici)** dell'astrologia.")
+
+		st.markdown("**Motivo 3:** spero di avervi convito di come sia possibile arrivare a conclusioni sbagliate se non si rispetto **le cazzo di ipotesi dei modelli**. Questo per dire che, tutte le volte che in televisione sentite un giornalista dire *<<le previsioni erano errate>>*, rispetto ad un qualsiasi argomento, "
+					"99% delle volte non si è trattato di un errore computazionale, non hanno sbagliato i conti, erano le ipotesi del modello predittivo a essere errate.")
+
+		st.markdown("**Motivo 4:** gli effetti di self-selection e omofilia condizionano fortemente il modo in cui percepiamo il mondo che ci circonda. Spero abbiate intuito che pure facendo un sondaggio online sia facile, soprattuto se non si è oggettivi nella formulazione delle domande, confermare le idee con le quali si è partiti e non sondare in maniera rigorosa le opinioni altrui."
+					" L'opinione di chi ci è *socialmente vicino* probabilmente assomiglia alla nostra, **non giudicate il mondo guardando solo il vostro prato di casa**. ")
+
+		st.markdown("Concludo ringraziando chi di voi ha avuto la pazienza di arrivare fino in fondo a questo articolo. E' la prima volta che scrivo così tanto e spero possa essere utile per qualcuno di voi. Per eventuali feedback, osservazioni o richieste di approfondimento scrivetemi su *francis@mrcharles.cool*. **La messa è finita, andate in pace.**")
 
 @st.cache
 def load_stars():
