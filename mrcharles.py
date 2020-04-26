@@ -146,7 +146,7 @@ def main():
 
 		st.markdown("Spero tu sia d'accordo con me nell'osservare che lo scenario sopra dipinto delinei *nettamente* una situazione di vita o morte. Ora sei disposto a tutto pur di avere quel Negroni gratis.")
 
-		st.markdown("Ci ricordiamo inoltre che Kevin è fandamentalmente un infame (il classico amico che shoppava su candycrush per dare la merda agli alti). Questa cosa ci fa salire il cospirazionismo all'istante: **Kevin è amico dei poteri forti**, avrà sicuramente una monetina truccata.")
+		st.markdown("Ci ricordiamo inoltre che Kevin è fondamentalmente un infame (il classico amico che shoppava su candycrush per dare la merda agli altri). Questa cosa ci fa salire il cospirazionismo all'istante: **Kevin è amico dei poteri forti**, avrà sicuramente una monetina truccata.")
 
 		st.markdown("Decidi quindi di accettare la scommessa ad una sola condizione: la possibilità di verificare che la moneta non sia truccata, detta in modo cool, che sia una *fair coin*. Rimane ora il problema di come verificare che la moneta sia effettivamente *fair*, ci tocca fare qualche conto.")
 
@@ -356,7 +356,7 @@ def main():
 
 		st.markdown("**Motivo 2:** i dati raccolti non sono da buttare via, semplicemente non possono essere usati per trarre conclusioni sull'universo conosciuto, non possono essere usati per **far inferenza sulla popolazione**. Probabilmente sono buoni dati per descrivere **cosa ne pensano i miei amici (e gli amici degli amici)** dell'astrologia.")
 
-		st.markdown("**Motivo 3:** spero di averti convito di come sia possibile arrivare a conclusioni sbagliate se non si rispetto **le cazzo di ipotesi dei modelli**. Questo per dire che, tutte le volte che in televisione senti un giornalista dire *<<le previsioni erano errate>>*, rispetto ad un qualsiasi argomento, "
+		st.markdown("**Motivo 3:** spero di averti convito di come sia possibile arrivare a conclusioni sbagliate se non si rispettano **le cazzo di ipotesi dei modelli**. Questo per dire che, tutte le volte che in televisione senti un giornalista dire *<<le previsioni erano errate>>*, rispetto ad un qualsiasi argomento, "
 					"99% delle volte non si è trattato di un errore computazionale, non hanno sbagliato i conti, erano le ipotesi del modello predittivo a essere errate.")
 
 		st.markdown("**Motivo 4:** gli effetti di self-selection e omofilia condizionano fortemente il modo in cui percepiamo il mondo che ci circonda. Spero tu abbia intuito che pure facendo un sondaggio online sia facile, soprattuto se non si è oggettivi nella formulazione delle domande, confermare le idee con le quali si è partiti e non sondare in maniera rigorosa le opinioni altrui."
