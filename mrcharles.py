@@ -106,7 +106,7 @@ def main():
 					" in un **sondaggio** online. Le domande poste agli (spesso annoiati) internauti possono essere le più disparate:")
 
 		st.markdown("* Quale di questi prodotti saresti disponibile a comprare?")
-		st.markdown("* Cosa ne pensi dell'auttuale governo? ")
+		st.markdown("* Cosa ne pensi dell'attuale governo? ")
 		st.markdown("* Esiste la vita dopo la morte?")
 		st.markdown("* Qu4LE v3rdURa Ti SENTI di raPPresentaRe oGGI?!1?")
 
