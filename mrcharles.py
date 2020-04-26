@@ -8,7 +8,7 @@ def main():
 	import pandas as pd
 	import matplotlib.pyplot as plt
 
-	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","Bias","Su di me"])
+	page = st.sidebar.selectbox("Choose a page", ["Homepage", "Guardando le stelle","L'importanza delle ipotesi","Su di me"])
 
 	####################################### BIO #########################################
 	if(page=='Su di me'):
@@ -95,7 +95,7 @@ def main():
 
 
 	######################################## BIAS #############################
-	if(page == 'Bias'):
+	if(page == "L'importanza delle ipotesi"):
 
 		st.title("L'importanza delle ipotesi: sampling, self-selection e omofilia")
 
