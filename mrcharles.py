@@ -84,7 +84,7 @@ def main():
 
 		st.markdown("Buona lettura")
 
-		st.markdown("*(Ringrazio poi moltissimo Mario Costa. Mario ha avuto la pazienza di seguirmi nella preparazione dell'infrastruttura necessaria alla realizzazione di questo sito, dai DNS alle certificazioni SSL e oltre )*")
+		st.markdown("*(Ringrazio poi moltissimo Mario Costa. Mario ha avuto un'enorme pazienza nel seguirmi nella preparazione dell'infrastruttura necessaria alla realizzazione di questo sito, dai DNS alle certificazioni SSL e oltre )*")
 
 
 	######################################### GUARDANDO LE STELLE ################################
@@ -134,7 +134,7 @@ def main():
 
 		st.subheader("Un esempio istruttivo")
 
-		st.markdown("Prima di arrivare al pezzo forte di questo articolo, diventa necessaria una pratica che manderà in bestia il lettore non matematico medio: *ipotizzare una situazione astratta e sconnessa dalla realtà sulla quale ragionare*. Un po' tipo quei problemi delle superiori in cui un tizio compra 200 banane e vuole scambiarle con 1.73 pesci rossi")
+		st.markdown("Prima di arrivare al pezzo forte di questo articolo, diventa necessaria una pratica che manderà in bestia il lettore non matematico medio: *ipotizzare una situazione astratta e sconnessa dalla realtà sulla quale ragionare*. Un po' tipo quei problemi delle superiori in cui un tizio compra 200 banane e vuole scambiarle con 1.73 pesci rossi.")
 
 		image3 = Image.open('./pics/banana.jpg')
 		st.image(image3, use_column_width=True,caption='il tizio con le banane')
@@ -153,7 +153,7 @@ def main():
 
 		st.markdown("*Probabilità stimata testa:* $\\hat\\theta = \\frac{N_{head}}{N_{tot}}$")
 
-		st.markdown("Poichè gli *outcome* possibili (gli esiti) della moneta sono due (testa o croce) avremo che tutti i lanci non testa dovranno necessariamente essere stati croce, quindi la stima della probabilità che esca croce sarà ")
+		st.markdown("Poichè gli *outcome* possibili (gli esiti) della moneta sono due (testa o croce) avremo che tutti i lanci non testa dovranno necessariamente essere stati croce, quindi la stima della probabilità che esca croce sarà: ")
 
 		st.markdown("*Probabilità stimata croce:* $1 -\\hat\\theta = 1- \\frac{N_{head}}{N_{tot}}$")
 
@@ -165,9 +165,18 @@ def main():
 		image4 = Image.open('./pics/future.jpg')
 		st.image(image4,use_column_width=True,caption='quando dici a Kevin che sei in grado di simulare il lancio di 1000 monetine in una frazione di secondo')
 
+		st.markdown("Il simulatore è basato su un'importantissima **ipotesi**: tutti i lanci delle monetine sono **indipendenti ed identicamente distributiti** (per gli amici, sono **i.i.d.**)")
+
+		st.success("**Indipendenti ed identicamente distribuiti:** quando affermiamo che due lanci di moneta siano *indipendenti* stiamo assumendo che se il lancio 1 è risultato *testa*, questo non ci dà alcuna informazione sull'outcome dei lanci successivi: sapere che la moneta 1 è risultata testa, se la nostra ipotesi è verificata, non aumenta la probabilità che la seconda moneta risulti nuovamente testa. Ogni lancio della monetina è a se stante, indipendente appunto."
+				   "Quando invece assumiamo che i lanci siano *identicamente distribuiti* stiamo affermando che la probabilità che ogni moneta risulti testa sia la stessa per ogni lancio.")
+
+		st.error("**Nerd note**: osserva come *indipendenti* ed *identicamente distribuiti* non siano la stessa cosa: potremmo avere un numero $N$ di lanci di moneta indipendenti ma con ognuno una probabilità diversa di risultar testa (quindi non identicamente distribuiti)")
+
 		st.markdown("Prima di avviare questa gloriosa simulazione devi impostare due parmetri:")
-		st.markdown("* **Probabilità testa effettiva**: se la moneta di Kevin non fosse truccata la probabilità di testa sarebbe 0.5 (50%). Tutti gli valori favoriscono maggiormente un outcome rispetto all'altro")
-		st.markdown("* **Numero di lanci:** prova a giocare con questo parametro e osserva come varia la stima all'aumentare dei lanci")
+		st.markdown("* **Probabilità testa effettiva**: se la moneta di Kevin non fosse truccata la probabilità di testa sarebbe 0.5 (50%). Tutti gli altri valori modellano monete che favoriscono maggiormente un lato rispetto all'altro;")
+		st.markdown("* **Numero di lanci:** prova a giocare con questo parametro e osserva come varia la stima all'aumentare dei lanci;")
+
+		st.markdown("Daje, tenendo ben a mente queste importanti ipotesi, possiamo impostare i valori e lanciare le monete")
 
 		prob_head = st.slider('Probabilità testa', min_value=0.01, max_value=1.0, step=0.01)
 		n_throws = st.slider('Numero lanci',min_value=1,max_value=2500,step=20)
@@ -198,7 +207,7 @@ def main():
 			st.write("Probabilità testa effettiva:",prob_head,"Probabilità croce effettiva",1-prob_head)
 
 			st.markdown("*Il grafico qui sotto riporta sull'asse orizzontale il numero di monetine lanciate, sull'asse verticale la stima della probabilità corrispondente a quel numero di lanci. Osserva come, all'aumentare del numero"
-						"di moentine lanciate, la stima converge velocemente verso l'effetiva probabilità di testa (rappresentato dalla linea orizzontale)*")
+						" di moentine lanciate, la stima converge velocemente verso l'effetiva probabilità di testa (rappresentato dalla linea orizzontale)*")
 
 			real_value = np.array([prob_head for i in range(len(running_mean))])
 
@@ -208,7 +217,51 @@ def main():
 
 			st.line_chart(graph_data)
 
+		st.markdown("Se hai giocato abbastanza con i parametri del simulatore, ti sarai accorto che nella situazione ideale che abbiamo costruito non importa quanto Kevin sia un figlio della mmmerda: indipendentemente da quanto la moneta sia"
+					" unfair, tu lanciandola come un pazzo te ne accorgerai. Potrai quindi usufruirne per scegliere su che lato della moneta scommettere o decidere di crepare di schiaffi Kevin una volta per tutte.")
 
+		st.subheader("Random sampling")
+
+		st.markdown("A questo punto dell'articolo la situazione in cui si trova il lettore è probabilmente la seguente:")
+
+		image5 = Image.open('./pics/fry.jpg')
+		st.image(image5,use_column_width=True)
+
+		st.markdown("Facciamo un po' di chiarezza! Nell'esempio sopra abbiamo parlato di una unica monetina"
+					", proviamo ora a pensare ad uno scenario leggermente diverso ma identico nel contenuto: invece di avere 1 moneta lanciata $N$ volte, abbiamo $N$ monete identiche che possiamo lanciare una sola volta. Riprendendo l'ipotesi che tutti i lanci fossero **i.i.d**, spero tu sia convinto che la situazione sarebbe la medesima.")
+
+		st.markdown("Siamo ancora interessati a sapere quale sia la la probabilità che una moneta risulti testa. Considerando ora che $N$ potrebbe essere un numero troppo grande anche per il nostro simulatore, dobbiamo scegliere una delle seguenti alternative:")
+
+		st.markdown("* *ce ne sbattiamo altamente* e lanciamo tutte le $N$, dedicando la nostra vita alla scienza: qualcuno dovrà pur lanciare ste monete;")
+		st.markdown("* ci inventiamo qualcosa di *smart* usando la statistica;")
+
+		st.markdown("Potremmo per esempio adottare una procedura di **simple random sampling** (campionamento casuale semplice):")
+		st.markdown("")
+
+		st.success("**Simple random sampling**: estraiamo un campione di $n$ monete dall'insieme totale delle $N$ monete disponibili. Ognuni moneta ha la stessa probabilità di finire nel nostro *campione* e viene scelta in modo completamente casuale. Come nell'esmpio precedente (grafico che converge alla linea orizzontale), per un $n$ sufficientemente grande la proporzione di testa e croce tra le $n$ monete sarà più o meno la stessa di quella tra le $N$ monete. Ci evitiamo quindi di doverle lanciare tutte le $N$ monete.")
+
+		st.markdown("Nel processo sopra descritto **due** sono i punti chiave:")
+		st.markdown("* Il fatto che *a priori* ogni moneta abbia la stessa probabilità di finire nel campione;")
+		st.markdown("* Il fatto che *a posteriori* ogni moneta nel campione sia stata scelta casualmente;")
+
+
+		st.markdown("Nota come questi due aspetti siano appunto **ipotesi**: *se* queste ipotesi sono rispettate, *allora* le grandezze calcolate sul campione di $n$ monetine rispecchiano quelle della popolazione $N$")
+
+		st.error("**Nerd notes:** Per i più attenti, la proposizione logica *<<se ..., allora ...>>* denota ciò che in matematica è chiamato **teorema**")
+
+		st.markdown("Nel nostro esempio delle monete, l'ipotesi iniziale che le monete siano i.i.d. fa si che queste due ulteriori ipotesi siano sempre soddisfatte: non importa come le scegliamo o chi finisca nel campione, poichè sono tutte identiche. Notiamo inoltre come un'ipotesi iniziale faccia si che altre ipotesi siano verificate.")
+
+		image6 = Image.open('./pics/inception.jpg')
+		st.image(image6,use_column_width=True)
+
+		st.subheader("SI MA QUINDI IL SONDAGGIO?!!?")
+
+		st.markdown("Ok ci siamo, i sondaggi! Ora che abbiamo introdotto tutta questa struttura teorica siamo pronti ad affrontare come si deve il problema iniziale.")
+		st.markdown("Pensiamo ad una domanda a scelta multipla di un sondaggio, cosa la rende diversa dalla moneta? Beh in realtà poco! Invece che avere due outcome possibili (*testa,croce*) abbiamo un numero $k$ di risposte possibili e siamo interessati a capire quale sia la probabilità che, prendendo una persona per strada, questa ci risponda con una delle alternative possibili.")
+
+		st.markdown("Un primo problema risulta evidente: **non possiamo lanciare in aria persone i.i.d.**, per quando la cosa sarebbe divertente, probabibilmente non contribuirebbe al nostro scopo finale.")
+
+		st.markdown("La prima ipotesi non è quindi rispettata e, come abbiamo imparato all'inizio dell'articolo, no ipotesi no conclusioni. Non ci resta quindi che provare a raccogliere un simple random sample di opinioni con un form. Cosa potrebbe andare storto?")
 
 
 		df,qname_dict = load_stars()
