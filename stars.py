@@ -45,11 +45,11 @@ def proportion_visualizer(df, qname_dict, q_a, q_b):
 
         if (i == 0):
 
-            fig = go.Figure(go.Bar(x=x, y=df_internal.loc[j].values, name=j))
+            fig = go.Figure(go.Bar(x=x, y=df_internal.loc[j].values, name=str(j)))
 
         else:
 
-            fig.add_trace(go.Bar(x=x, y=df_internal.loc[j].values, name=j))
+            fig.add_trace(go.Bar(x=x, y=df_internal.loc[j].values, name=str(j)))
 
     fig.update_layout(barmode='stack', legend_orientation='h', legend=dict(x=0, y=1.3), hovermode='x',
 
@@ -334,9 +334,8 @@ def stars():
     accorgiamo che **nel nostro campione sembra essere molto più probabile** (più del doppio) che un uomo dichiari di non credere in nulla
     rispetto ad una donna. Vediamo quindi come:
     
-    * Gli uomini siano tendenzialmente creature semplici orientate al raggiungimento dei bisogni primari *(poi vedremo anche dei diffeti)*;
-    * Poichè inoltre che il nostro campione sovra rappresenta il gentil sesso, la **differenza tra dati aggregati e
-    disaggregati** appare ancora più netta. 
+    * Gli uomini siano tendenzialmente creature semplici orientate al raggiungimento dei bisogni primari *(poi vedremo anche dei difetti)*;
+    * la **differenza tra dati aggregati e disaggregati** appare ancora più netta poichè il nostro campione sovra rappresenta inoltre il gentil sesso. 
     ''')
 
 
@@ -384,7 +383,7 @@ def stars():
 
     st.markdown('''
     *Immaginiamo anche questa volta di aver a che fare con il nostro amico infame preferito: Kevin. La settimana scorsa, grazie ai tuoi nuovi
-     super poteri statistici, se riuscito a scroccargli un Negroni. Questa cosa non gli è andata proprio giù e, deciso a fartela pagare, ti propone
+     super poteri statistici, sei riuscito a scroccargli un Negroni. Questa cosa non gli è andata proprio giù e, deciso a fartela pagare, ti propone
      una nuova sfida: una partita a Risiko.*
      
      Sei perfettamente conscio che questa potrebbe essere la tua ultima sera con Kevin poichè l'evidenza statistica descrive come
@@ -455,7 +454,7 @@ def stars():
 
 
     st.markdown('''
-    Nonostante i dadi non siano truccati, eseguendo l'esperimento sopra più volte possiamo osservare che:
+    Nonostante i dadi non siano truccati, eseguendo più volte l'esperimento sopra possiamo osservare che:
     
     * Molto raramente, in 60 lanci, ogni faccia del dado salti fuori esattamente 10 volte;
     * Pur avendo dadi identici, le proporzioni tra gli outcome variano da dado a dado.
@@ -535,7 +534,7 @@ def stars():
     ''')
 
     st.success('''
-    **Distribuzione di probabilità**: legge matematica che lega i valori che una rv puo assumere alla probabilità con cui essi si presentano. Nel caso del nostro
+    **Distribuzione di probabilità**: legge matematica che lega i valori che una rv può assumere alla probabilità con cui essi si presentano. Nel caso del nostro
     dado non truccato $P(X=k)=1/6$ dove $k=1,2,3,4,5,6.$
     ''')
 
